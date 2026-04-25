@@ -165,16 +165,16 @@ EOF
 success "Config dnsdist berhasil ditulis."
 
 # ============================================================
-# STEP 4 - Buat folder /opt/blocklist
+# STEP 5 - Buat folder /opt/blocklist
 # ============================================================
-info "Step 4: Membuat folder /opt/blocklist..."
+info "Step 5: Membuat folder /opt/blocklist..."
 mkdir -p /opt/blocklist
 success "Folder /opt/blocklist berhasil dibuat."
 
 # ============================================================
-# STEP 5 - Buat file sources.txt
+# STEP 6 - Buat file sources.txt
 # ============================================================
-info "Step 5: Membuat /opt/blocklist/sources.txt..."
+info "Step 6: Membuat /opt/blocklist/sources.txt..."
 cat > /opt/blocklist/sources.txt <<'SRCEOF'
 https://raw.githubusercontent.com/alsyundawy/TrustPositif/refs/heads/main/sunat-trustpositif.txt
 https://raw.githubusercontent.com/alsyundawy/TrustPositif/refs/heads/main/ipaddress_isp_valid.txt
@@ -182,9 +182,9 @@ SRCEOF
 success "sources.txt berhasil dibuat."
 
 # ============================================================
-# STEP 6 - Buat file update-blocklist.sh
+# STEP 7 - Buat file update-blocklist.sh
 # ============================================================
-info "Step 6: Membuat /opt/blocklist/update-blocklist.sh..."
+info "Step 7: Membuat /opt/blocklist/update-blocklist.sh..."
 cat > /opt/blocklist/update-blocklist.sh <<'SCRIPTEOF'
 #!/bin/bash
 
