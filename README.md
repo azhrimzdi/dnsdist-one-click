@@ -19,7 +19,7 @@
 
 ## 📋 Prasyarat Sistem
 
-1. Sistem Operasi berbasis Debian/Ubuntu (untuk penggunaan `apt`).
+1. Sistem Operasi Ubuntu 22.04 atau terbaru LTS (untuk penggunaan `apt`).
 2. Akses user **root** atau `sudo`.
 3. Port **53 (UDP & TCP)** tidak terpakai/terbuka di *firewall*.
 
