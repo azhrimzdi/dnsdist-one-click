@@ -40,9 +40,18 @@ apt install freecdb -y || error "Gagal install freecdb"
 success "freecdb berhasil diinstall."
 
 # ============================================================
-# STEP 3 - Konfigurasi dnsdist.conf
+# STEP 3 - Instal curl
 # ============================================================
-info "Step 3: Konfigurasi dnsdist..."
+
+info "Step 3: Menginstall curl..."
+apt install curl -y || error "Gagal install freecdb"
+success "curl berhasil diinstall."
+
+
+# ============================================================
+# STEP 4 - Konfigurasi dnsdist.conf
+# ============================================================
+info "Step 4: Konfigurasi dnsdist..."
 echo ""
 
 # --- IP Server ---
@@ -167,8 +176,8 @@ success "Folder /opt/blocklist berhasil dibuat."
 # ============================================================
 info "Step 5: Membuat /opt/blocklist/sources.txt..."
 cat > /opt/blocklist/sources.txt <<'SRCEOF'
-https://trustpositif.komdigi.go.id/assets/db/domains_isp
-https://trustpositif.komdigi.go.id/assets/db/ipaddress_isp
+https://raw.githubusercontent.com/alsyundawy/TrustPositif/refs/heads/main/sunat-trustpositif.txt
+https://raw.githubusercontent.com/alsyundawy/TrustPositif/refs/heads/main/ipaddress_isp_valid.txt
 SRCEOF
 success "sources.txt berhasil dibuat."
 
