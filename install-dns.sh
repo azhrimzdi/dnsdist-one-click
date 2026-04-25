@@ -44,7 +44,7 @@ success "freecdb berhasil diinstall."
 # ============================================================
 
 info "Step 3: Menginstall curl..."
-apt install curl -y || error "Gagal install freecdb"
+apt install curl -y || error "Gagal install curl"
 success "curl berhasil diinstall."
 
 
