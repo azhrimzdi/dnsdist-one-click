@@ -125,13 +125,31 @@ setMaxTCPClientThreads(100)
 setMaxTCPQueuedConnections(2000)
 setMaxTCPConnectionsPerClient(20)
 
--- backend recursor
-newServer({ address="1.1.1.1:53", name="cf-1", checkName="cloudflare.com.", mustResolve=true })
-newServer({address="9.9.9.9:53",name="quad", pool="", mustResolve=true})
+-- backend upstream
+newServer({
+    address="1.1.1.1:53",
+    name="cf-1",
+    checkName="cloudflare.com.",
+    mustResolve=true,
+    timeout=2,
+    checkInterval=10
+})
+newServer({
+    address="9.9.9.9:53",
+    name="quad",
+    pool="",
+    mustResolve=true,
+    timeout=2,
+    checkInterval=10
+})
 setServerPolicy(leastOutstanding)
 
--- packet cache
-pc = newPacketCache(10000000)
+pc = newPacketCache(500000, {
+    maxTTL=86400,
+    minTTL=60,
+    temporaryTTL=30,
+    maxNegativeTTL=300
+})
 getPool(""):setCache(pc)
 
 -- load blocklist
@@ -147,7 +165,7 @@ addAction(
 )
 
 -- rate limit
-addAction(MaxQPSIPRule(10000), DropAction())
+addAction(MaxQPSIPRule(100), DropAction())
 
 -- forward normal DNS
 addAction(AllRule(), PoolAction(""))
