@@ -1,7 +1,7 @@
 <div align="center">
   <h1>🚀 DNSDist One-Click Installer + Komdigi Filter</h1>
   <p>
-    <strong>Cara super cepat, ringan, dan praktis menginstal DNS Server menggunakan <a href="https://dnsdist.org/">dnsdist</a> lengkap dengan fitur pemblokiran situs Trust Positif (Internet Positif) dari Komdigi.</strong>
+    <strong>Cara super cepat, ringan, dan praktis menginstal DNS Server menggunakan <a href="https://dnsdist.org/" target=_blank>dnsdist</a> lengkap dengan fitur pemblokiran situs Trust Positif (Internet Positif) dari Komdigi.</strong>
   </p>
 </div>
 
